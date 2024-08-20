@@ -1,0 +1,21 @@
+<div class="popular-card">
+    <figure class="card-img">
+        <img src="" alt="" loading="lazy">
+    </figure>
+    <div class="card-content">
+      <div class="card-rating">
+          {{ range $i, $icon := .Site.Params.stars }}
+            <ion-icon name="star" role="img" class="md hydrated" aria-label="star"></ion-icon>
+          {{ end }}
+      </div>
+      <p class="card-subtitle">
+      <a href="#">{{ .Subtitle }}</a>
+      </p>
+      <h3 class="h3 card-title">
+          <a href="#">{{ .Title }}</a>
+      </h3>
+      <p class="card-text">
+        {{ .Content }}
+      </p>
+    </div>
+</div>
