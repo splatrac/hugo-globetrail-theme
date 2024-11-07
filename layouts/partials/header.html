@@ -19,7 +19,7 @@
 
         <a href="#" class="logo">
             {{ $image := resources.Get "images/logo.png" }}
-            {{ $resizedImage := $image.Resize "200x" }}
+            {{ $resizedImage := $image.Resize "120x" }}
             <img src="{{ $resizedImage.Permalink }}" alt="Tourly logo">
         </a>
         <div class="header-btn-group">
