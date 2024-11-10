@@ -1,0 +1,22 @@
+{{- with (index .Site.Data .Site.Language.Lang).home.cta_section }}
+{{- if .enable }}
+<section class="cta" id="contact">
+    <div class="container">
+        <div class="cta-content">
+            {{- with .label_title }}
+            <p class="section-subtitle">{{ . }}</p>
+            {{- end }}
+            {{- with .title }}
+            <h2 class="h2 section-title">{{ . | safeHTML }}</h2>
+            {{- end }}
+            {{- with .description }}
+            <p class="section-text">{{ . | safeHTML }}</p>
+            {{- end }}
+        </div>
+        {{- with .button }}
+        <button class="btn btn-secondary">{{ . }}</button>
+        {{- end }}
+    </div>
+</section>
+{{- end }}
+{{- end }}

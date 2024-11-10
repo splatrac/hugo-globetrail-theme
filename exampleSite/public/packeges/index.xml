@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Packege on Globetrail Theme</title>
+    <link>http://localhost:50167/packeges/</link>
+    <description>Recent content in Packege on Globetrail Theme</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 21 May 2024 06:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:50167/packeges/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>EXPERIENCE THE GREAT HOLIDAY ON BEACH</title>
+      <link>http://localhost:50167/packeges/experience-the-great-holiday-on-beach/</link>
+      <pubDate>Tue, 21 May 2024 06:00:00 +0000</pubDate>
+      <guid>http://localhost:50167/packeges/experience-the-great-holiday-on-beach/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SUMMER HOLIDAY TO THE OXOLOTAN RIVER</title>
+      <link>http://localhost:50167/packeges/summer-holiday-to-the-oxolotan-river/</link>
+      <pubDate>Tue, 21 May 2024 06:00:00 +0000</pubDate>
+      <guid>http://localhost:50167/packeges/summer-holiday-to-the-oxolotan-river/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SANTORINI ISLAND&#39;S WEEKEND VACATION</title>
+      <link>http://localhost:50167/packeges/santorini-islands-weekend-vacation/</link>
+      <pubDate>Tue, 21 May 2024 06:00:00 +0000</pubDate>
+      <guid>http://localhost:50167/packeges/santorini-islands-weekend-vacation/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

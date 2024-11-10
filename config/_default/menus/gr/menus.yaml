@@ -1,0 +1,39 @@
+main:
+  - name: home
+    url: "#home"
+    weight: 10
+  - name: about us
+    url: "/"
+    weight: 20
+  - name: destination
+    url: "#destination"
+    weight: 30
+  - name: packages
+    url: "#packages"
+    weight: 40
+  - name: gallery
+    url: "#gallery"
+    weight: 50
+  - name: contact us
+    url: "#contact"
+    weight: 60
+social_list:
+  - name: facebook
+    url: "#"
+    weight: 10
+  - name: twitter
+    url: "#"
+    weight: 20
+  - name: youtube
+    url: "#"
+    weight: 30
+footer:
+  - name: Privacy Policy
+    url: /privacy-policy
+    weight: 10
+  - name: Term & Condition
+    url: /term-and-condition
+    weight: 20
+  - name: FAQ
+    url: /faq
+    weight: 30

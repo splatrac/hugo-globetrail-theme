@@ -1,0 +1,22 @@
+{{- with (index .Site.Data .Site.Language.Lang).home.hero_section }}
+{{- if .enable }}
+<section class="hero" id="home">
+  <div class="container">
+    {{- with .title }}
+    <h2 class="h1 hero-title">{{ . | safeHTML }}</h2>
+    {{- end }}
+    {{- with .description }}
+    <p class="hero-text">{{ . | safeHTML }}</p>
+    {{- end }}
+    <div class="btn-group">
+      {{- with .button_primary }}
+      <button class="btn btn-primary">{{ . }}</button>
+      {{- end }}
+      {{- with .button_secondary }}
+      <button class="btn btn-secondary">{{ . }}</button>
+      {{- end }}
+    </div>
+  </div>
+</section>
+{{- end }}
+{{- end }}

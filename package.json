@@ -1,0 +1,25 @@
+{
+    "name": "tourly",
+    "version": "1.0.0",
+    "description": "Tourly",
+    "main": "index.js",
+    "scripts": {
+        "dev": "hugo server --disableFastRender",
+        "build": "hugo --gc --minify",
+        "start": "hugo server --bind 192.168.0.104 --baseURL http://192.168.0.104"
+    },
+    "author": "kreasify",
+    "license": "ISC",
+    "browserslist": [
+        "last 2 version",
+        "> 1%",
+        "maintained node versions",
+        "not dead"
+    ],
+    "dependencies": {
+        "autoprefixer": "^10.4.19",
+        "postcss": "^8.4.38",
+        "postcss-cli": "^11.0.0",
+        "postcss-import": "^16.1.0"
+    }
+}

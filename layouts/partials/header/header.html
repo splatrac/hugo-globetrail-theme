@@ -1,0 +1,90 @@
+{{- $site := .Site }}
+{{- $currentPage := . }}
+{{- $page_url := $currentPage.RelPermalink | relLangURL }}
+{{- $header := .Site.Params.header }}
+<header class="header {{ if .IsHome }}header-home{{ else }}header-page{{ end }}" data-header>
+    <div class="overlay" data-overlay></div>
+    <div class="header-top">
+        <div class="container">
+            <a href="tel:+01123456790" class="helpline-box">
+                <div class="icon-box">
+                    <ion-icon name="call-outline"></ion-icon>
+                </div>
+                <div class="wrapper">
+                    {{- if $header.helpline_title }}
+                    <p class="helpline-title">{{ $header.helpline_title }}</p>
+                    {{- end }}
+                    {{- if $header.helpline_number }}
+                    <p class="helpline-number">{{ $header.helpline_number }}</p>
+                    {{- end }}
+                </div>
+            </a>
+            <a href="{{ "/" | relLangURL }}" class="logo">
+                {{- if .IsHome }}
+                {{ with resources.Get (printf "images/%s" .Site.Params.logo.light) }}
+                    {{ with .Resize "100x" }}
+                    <img src="{{ .RelPermalink }}" alt="Globetrail logo">
+                    {{ end }}
+                {{ end }}
+                {{- else }}
+                {{ with resources.Get (printf "images/%s" .Site.Params.logo.light) }}
+                    {{ with .Resize "100x" }}
+                    <img src="{{ .RelPermalink }}" alt="Globetrail logo">
+                    {{ end }}
+                {{ end }}
+                {{- end }}
+            </a>
+            <div class="header-btn-group">
+                <button class="search-btn" aria-label="Search">
+                    <ion-icon name="search"></ion-icon>
+                </button>
+                <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+                    <ion-icon name="menu-outline"></ion-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="container">
+            <ul class="social-list">
+                {{- range $index, $social := .Site.Menus.social_list }}
+                <li>
+                    <a href="{{ .URL | absURL }}" class="social-link">
+                        <ion-icon name="logo-{{ .Name | urlize }}"></ion-icon>
+                    </a>
+                </li>
+                {{- end }}
+            </ul>
+            <nav class="navbar" data-navbar>
+                <div class="navbar-top">
+                    <a href="{{ "/" | relLangURL }}" class="logo">
+                        <img src="/images/logo-blue.svg" alt="Tourly logo">
+                    </a>
+                    <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+                        <ion-icon name="close-outline"></ion-icon>
+                    </button>
+                </div>
+                <ul class="navbar-list">
+                    {{- $current := . -}}
+                    {{- $section := $current.Section -}}
+                    {{- range $index, $menus := .Site.Menus.main }}
+                    {{- $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) -}}
+                    {{- $active = or $active (eq .Name $current.Title) -}}
+                    {{- $active = or $active (and (eq .Name ($section | humanize)) (eq $current.Section $section)) -}}
+                    <li>
+                        <a href="{{.URL | relLangURL}}" class="navbar-link" data-nav-link>{{ .Name | i18n | safeHTML }}</a>
+                    </li>
+                    {{- end }}
+                </ul>
+            </nav>
+            <button class="btn btn-primary">Book Now</button>
+
+        {{ if .IsTranslated }}
+          {{ partial "header/lang-selector.html" . }}
+        {{ end }}
+        </div>
+    </div>
+</header>
+
+
+

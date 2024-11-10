@@ -1,0 +1,10 @@
+en:
+  disabled: false
+  languageCode: en
+  languageName: English
+  weight: 1
+gr:
+  disabled: false
+  languageCode: gr
+  languageName: Greek
+  weight: 2

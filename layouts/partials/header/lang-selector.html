@@ -1,0 +1,13 @@
+<div>
+    <ul class="language-list">
+        {{ range $.Site.Home.AllTranslations }}
+            {{- $countryCode := partial "helpers/country-code.html" . -}}
+            <li>
+                <a href="{{ .Permalink }}" aria-label="{{ .Language.LanguageName }}">
+                    <span class="fi fi-{{ $countryCode }}"></span>
+                </a>
+            </li>
+        {{ end }}
+    </ul>
+</div>
+

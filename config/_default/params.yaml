@@ -1,0 +1,17 @@
+title: Globetrail Theme
+description: Urna ratione ante harum provident, eleifend, vulputate molestiae proin fringilla, praesentium magna conubia at perferendis, pretium, aenean aut ultrices.
+# Your favicon must be located in the assets/images folder
+favicon: images/favicon.png
+author: Splatrac
+header:
+  title: Globetrail
+  helpline_title: "For Further Inquires:"
+  helpline_number: "+01 (123) 4567 90"
+contact:
+  phone: +01 (123) 4567 90
+  email: info@globetrail.org
+  location: 3146 Koontz, California
+copyright: 2024 <a href="">Splatrac</a>. All rights reserved
+logo:
+  light: "logo.png"
+  dark: "logo.png"

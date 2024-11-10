@@ -1,0 +1,5 @@
+<!-- local js -->
+{{- $js := resources.Get "js/script.js" }}
+{{- $js_min := $js | resources.Minify }}
+
+<script defer src="{{ $js_min.RelPermalink }}"></script>

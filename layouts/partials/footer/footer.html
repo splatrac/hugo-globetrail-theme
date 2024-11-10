@@ -1,0 +1,70 @@
+<footer class="footer">
+    <div class="footer-top">
+        <div class="container">
+            <div class="footer-brand">
+                <a href="{{ "/" | relLangURL }}" class="logo">
+                    <img src="/images/logo.png" alt="Globetrail logo">
+                </a>
+                {{- with .Site.Params.description }}
+                <p class="footer-text">{{ . | safeHTML }}</p>
+                {{- end }}
+            </div>
+            <div class="footer-contact">
+                <h4 class="contact-title">Contact Us</h4>
+                <p class="contact-text">
+                    Feel free to contact and reach us !!
+                </p>
+                <ul>
+                    {{- with .Site.Params.contact.phone }}
+                    {{- $phone := . }}
+                    {{- $phone := replace $phone " " "" }}
+                    {{- $phone := replace $phone "(" "" }}
+                    {{- $phone := replace $phone ")" "" }}
+                    {{- $phone := replace $phone "-" "" }}
+                    {{- $phone := replace $phone "." "" }}
+                    {{- $phone := replace $phone "," "" }}
+                    <li class="contact-item">
+                        <ion-icon name="call-outline"></ion-icon>
+                        <a href="tel:{{ $phone }}" class="contact-link">{{ . }}</a>
+                    </li>
+                    {{- end }}
+                    {{- with .Site.Params.contact.email }}
+                    <li class="contact-item">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <a href="mailto:{{ . }}" class="contact-link">{{ . }}</a>
+                    </li>
+                    {{- end }}
+                    {{- with .Site.Params.contact.location }}
+                    <li class="contact-item">
+                        <ion-icon name="location-outline"></ion-icon>
+                        <address>{{ . }}</address>
+                    </li>
+                    {{- end }}
+                </ul>
+            </div>
+            <div class="footer-form">
+                <p class="form-text">
+                    Subscribe our newsletter for more update & news !!
+                </p>
+                <form action="" class="form-wrapper">
+                    <input type="email" name="email" class="input-field" placeholder="Enter Your Email" required>
+                    <button type="submit" class="btn btn-secondary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p class="copyright">
+                &copy; {{ with .Site.Params.copyright }}{{ . | safeHTML }}{{ end }}
+            </p>
+            <ul class="footer-bottom-list">
+                {{- range .Site.Menus.footer }}
+                <li>
+                    <a href="{{ .URL | absURL }}" class="footer-bottom-link">{{ .Name | i18n }}</a>
+                </li>
+                {{- end }}
+            </ul>
+        </div>
+    </div>
+</footer>

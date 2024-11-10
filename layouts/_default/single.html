@@ -1,0 +1,14 @@
+{{- define "main" }}
+<main id="site-main" class="page-single">
+    <div class="container">
+        <article class="page-article">
+            <header class="page-header">
+                <h1 class="page-header__title h2 section-title">{{ .Title }}</h1>
+            </header>
+            <div class="page-content">
+                {{ .Content }}
+            </div>
+        </article>
+    </div>
+</main>
+{{- end }}

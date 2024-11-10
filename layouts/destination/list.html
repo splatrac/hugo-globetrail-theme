@@ -1,0 +1,54 @@
+{{ define "main" }}
+<div class="page-list">
+	<div class="container">
+		<div class="page-article">
+			<header class="page-header">
+				<h1 class="page-header__title h2 section-title">{{ .Title }}</h1>
+				<p class="section-text">{{ .Params.description | safeHTML }}</p>
+			</header>
+			<div class="page-lists">
+				<ul class="popular-list">
+					{{- $query := where site.RegularPages "Type" "destination" }}
+					{{- $featured := where $query "Params.featured" "==" true }}
+					{{- range $index, $posts := $featured }}
+					<li>
+						<div class="popular-card">
+							<figure class="card-img">
+								{{- with resources.GetMatch .Params.image }}
+								{{- with .Resize (printf "%dx%d webp q100" .Width .Height ) }}
+								<img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}"
+									alt="{{  .Title }}" loading="lazy">
+								{{- end }}
+								{{- end }}
+							</figure>
+							<div class="card-content">
+								<div class="card-rating">
+									<ion-icon name="star"></ion-icon>
+									<ion-icon name="star"></ion-icon>
+									<ion-icon name="star"></ion-icon>
+									<ion-icon name="star"></ion-icon>
+									<ion-icon name="star"></ion-icon>
+								</div>
+								<p class="card-subtitle">
+									{{- if .Params.country -}}
+									<a href="{{ " /country/" | relURL }}{{ .Params.country | urlize }}/">{{
+										.Params.country |
+										urlize }}</a>
+									{{- end }}
+								</p>
+								<h3 class="h3 card-title">
+									<a href="{{ .RelPermalink }}">{{ .Title }}</a>
+								</h3>
+								{{- if .Params.description }}
+								<p class="card-text">{{ .Params.description | safeHTML }}</p>
+								{{- end }}
+							</div>
+						</div>
+					</li>
+					{{- end }}
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+{{- end }}

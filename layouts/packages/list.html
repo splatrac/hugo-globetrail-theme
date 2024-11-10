@@ -1,0 +1,82 @@
+{{ define "main" }}
+<div class="page-list">
+	<div class="container">
+		<div class="page-article">
+			<header class="page-header">
+				<h1 class="page-header__title h2 section-title">{{ .Title }}</h1>
+				<p class="section-text">{{ .Params.description | safeHTML }}</p>
+			</header>
+			<div class="page-lists">
+				<ul class="package-list">
+					{{- $query := where site.RegularPages "Type" "packages" }}
+					{{- $featured := where $query "Params.featured" "==" true }}
+					{{- range $index, $posts := $featured }}
+					<li>
+						<div class="package-card">
+							<figure class="card-banner">
+								{{- with resources.GetMatch .Params.image }}
+								{{- with .Resize (printf "%dx%d webp q100" .Width .Height) }}
+								<img src="{{ .RelPermalink }}" alt="{{ .Title }}" loading="lazy">
+								{{- end }}
+								{{- end }}
+							</figure>
+							<div class="card-content">
+								<h3 class="h3 card-title">{{ .Title }}</h3>
+								{{- if .Params.description }}
+								<p class="card-text">{{ .Params.description | safeHTML }}</p>
+								{{- end }}
+								<ul class="card-meta-list">
+									{{- if .Params.time }}
+									<li class="card-meta-item">
+										<div class="meta-box">
+											<ion-icon name="time"></ion-icon>
+											<p class="text">{{ .Params.time }}</p>
+										</div>
+									</li>
+									{{- end }}
+									{{- if .Params.pax }}
+									<li class="card-meta-item">
+										<div class="meta-box">
+											<ion-icon name="people"></ion-icon>
+											<p class="text">pax: {{ .Params.pax }}</p>
+										</div>
+									</li>
+									{{- end }}
+									{{- if .Params.country -}}
+									<li class="card-meta-item">
+										<div class="meta-box">
+											<ion-icon name="location"></ion-icon>
+											<p class="text">{{ .Params.country }}</p>
+										</div>
+									</li>
+									{{- end }}
+								</ul>
+							</div>
+							<div class="card-price">
+								<div class="wrapper">
+									<p class="reviews">(25 reviews)</p>
+									<div class="card-rating">
+										<ion-icon name="star"></ion-icon>
+										<ion-icon name="star"></ion-icon>
+										<ion-icon name="star"></ion-icon>
+										<ion-icon name="star"></ion-icon>
+										<ion-icon name="star"></ion-icon>
+									</div>
+								</div>
+								{{- if .Params.price -}}
+								<p class="price">
+									{{ .Params.price }}
+									<span>/ per person</span>
+								</p>
+								{{- end }}
+								<button class="btn btn-secondary" onclick="location.href='{{ .Permalink }}'">Book Now</button>
+							</div>
+						</div>
+					</li>
+					{{- end }}
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+{{- end }}

@@ -1,0 +1,30 @@
+{{- with (index .Site.Data .Site.Language.Lang).home.gallery_section }}
+{{- if .enable }}
+<section class="gallery" id="gallery">
+    <div class="container">
+        {{- with .label_title }}
+        <p class="section-subtitle">{{ . }}</p>
+        {{- end }}
+        {{- with .title }}
+        <h2 class="h2 section-title">{{ . | safeHTML }}</h2>
+        {{- end }}
+        {{- with .description }}
+        <p class="section-text">{{ . | safeHTML }}</p>
+        {{- end }}
+        <ul class="gallery-list">
+            {{- range .images }}
+            <li class="gallery-item">
+                <figure class="gallery-image">
+                    {{- with resources.GetMatch . }}
+                    {{- with .Resize (printf "%dx%d webp q100" .Width .Height) }}
+                    <img src="{{ .RelPermalink }}" alt="Gallery image" loading="lazy">
+                    {{- end }}
+                    {{- end }}
+                </figure>
+            </li>
+            {{- end }}
+        </ul>
+    </div>
+</section>
+{{- end }}
+{{- end }}

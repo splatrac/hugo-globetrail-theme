@@ -1,0 +1,91 @@
+{{- with (index .Site.Data .Site.Language.Lang).home.packages_section }}
+{{- if .enable }}
+<section class="package" id="packages">
+    <div class="container">
+        {{- with .label_title }}
+        <p class="section-subtitle">{{ . }}</p>
+        {{- end }}
+        {{- with .title }}
+        <h2 class="h2 section-title">{{ . | safeHTML }}</h2>
+        {{- end }}
+        {{- with .description }}
+        <p class="section-text">{{ . | safeHTML }}</p>
+        {{- end }}
+        <ul class="package-list">
+            {{- $query := where site.RegularPages "Type" "packages" }}
+            {{- $featured := where $query "Params.featured" "==" true }}
+            {{- range $index, $posts := $featured }}
+            <li>
+                <div class="package-card">
+                    <figure class="card-banner">
+                        {{- with resources.GetMatch .Params.image }}
+                        {{- with .Resize (printf "%dx%d webp q100" .Width .Height) }}
+                        <img src="{{ .RelPermalink }}" alt="{{  .Title }}" loading="lazy">
+                        {{- end }}
+                        {{- end }}
+                    </figure>
+                    <div class="card-content">
+                        <h3 class="h3 card-title">{{ .Title }}</h3>
+                        {{- if .Params.description }}
+                        <p class="card-text">{{ .Params.description | safeHTML }}</p>
+                        {{- end }}
+                        <ul class="card-meta-list">
+                            {{- if .Params.time }}
+                            <li class="card-meta-item">
+                                <div class="meta-box">
+                                    <ion-icon name="time"></ion-icon>
+                                    <p class="text">{{ .Params.time }}</p>
+                                </div>
+                            </li>
+                            {{- end }}
+                            {{- if .Params.pax }}
+                            <li class="card-meta-item">
+                                <div class="meta-box">
+                                    <ion-icon name="people"></ion-icon>
+                                    <p class="text">{{ .Params.pax }}</p>
+                                </div>
+                            </li>
+                            {{- end }}
+                            {{- if .Params.country -}}
+                            <li class="card-meta-item">
+                                <div class="meta-box">
+                                    <ion-icon name="location"></ion-icon>
+                                    <p class="text">{{ .Params.country }}</p>
+                                </div>
+                            </li>
+                            {{- end }}
+                        </ul>
+                    </div>
+                    <div class="card-price">
+                        <div class="wrapper">
+                            {{- if .Params.reviews }}
+                            <p class="reviews">({{ .Params.reviews }} reviews)</p>
+                            {{- end }}
+                            <div class="card-rating">
+                                {{- $rating := .Params.rating }}
+                                <ion-icon name="star" class="{{ if ge $rating 1 }}white{{ end }}"></ion-icon>
+                                <ion-icon name="star" class="{{ if ge $rating 2 }}white{{ end }}"></ion-icon>
+                                <ion-icon name="star" class="{{ if ge $rating 3 }}white{{ end }}"></ion-icon>
+                                <ion-icon name="star" class="{{ if ge $rating 4 }}white{{ end }}"></ion-icon>
+                                <ion-icon name="star" class="{{ if ge $rating 5 }}white{{ end }}"></ion-icon>
+                            </div>
+                        </div>
+                        {{- if .Params.price -}}
+                        <p class="price">
+                            {{ .Params.price }}
+                            <span>/ per person</span>
+                        </p>
+                        {{- end }}
+                        <button class="btn btn-secondary">Book Now</button>
+                    </div>
+                </div>
+            </li>
+            {{- end }}
+        </ul>
+        <div class="button-wrapper">
+            <a class="button-link btn btn-primary" href="/packages">View All Packages</a>
+        </div>
+    </div>
+</section>
+{{- end }}
+{{- end }}
