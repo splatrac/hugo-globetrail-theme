@@ -2,7 +2,7 @@ main:
   - name: home
     url: "#home"
     weight: 10
-  - name: about us
+  - name: about_us
     url: "/"
     weight: 20
   - name: destination
@@ -14,7 +14,7 @@ main:
   - name: gallery
     url: "#gallery"
     weight: 50
-  - name: contact us
+  - name: contact_us
     url: "#contact"
     weight: 60
 social_list:
@@ -28,10 +28,10 @@ social_list:
     url: "#"
     weight: 30
 footer:
-  - name: Privacy Policy
+  - name: privacy_policy
     url: /privacy-policy
     weight: 10
-  - name: Term & Condition
+  - name: terms_n_cond
     url: /term-and-condition
     weight: 20
   - name: FAQ

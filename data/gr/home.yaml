@@ -42,15 +42,15 @@ destination_section:
 packages_section:
   enable: true
   label_title: ΔΗΜΟΦΙΛΗ ΠΑΚΕΤΑ
-  title: CHECKOUT OUR PACKAGES
+  title: ΔΕΙΤΕ ΤΑ ΠΑΚΕΤΑ ΜΑΣ
   description: Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium. Sit ornare mollitia tenetur, aptent.
   button: View All Packages
 
 ### Gallery Section [ gallery-section.html ]
 gallery_section:
   enable: true
-  label_title: PHOTO GALLERY
-  title: PHOTO'S FROM TRAVELLERS
+  label_title: ΦΩΤΟΓΡΑΦΙΚΟ ΥΛΙΚΟ
+  title: ΦΩΤΟΓΡΑΦΙΕΣ ΤΑΞΙΔΙΩΤΩΝ
   description: Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium. Sit ornare mollitia tenetur, aptent.
   images:
   - images/gallery-1.jpg
