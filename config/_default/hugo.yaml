@@ -3,7 +3,7 @@ title: Globetrail
 baseURL: /
 languageCode: en
 defaultContentLanguage: en
-defaultContentLanguageInSubdir: true
+defaultContentLanguageInSubdir: false
 canonifyURLs: false
 disableAliases: true
 disableHugoGeneratorInject: true

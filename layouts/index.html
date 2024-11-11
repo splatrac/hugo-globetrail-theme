@@ -3,8 +3,6 @@
 
   <article>
     {{- $page := . }}
-
-    {{ if eq $page "/" }}
     {{- range $section := $.Params.sections }}
         {{- $partialPath := printf "partials/sections/%s.html" $section }}
         {{- if templates.Exists ( $partialPath ) }}
