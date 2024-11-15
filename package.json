@@ -1,7 +1,7 @@
 {
-    "name": "tourly",
+    "name": "globetrail",
     "version": "1.0.0",
-    "description": "Tourly",
+    "description": "Globetrail",
     "main": "index.js",
     "scripts": {
         "dev": "hugo server --disableFastRender",

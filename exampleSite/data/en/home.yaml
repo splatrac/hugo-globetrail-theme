@@ -1,0 +1,68 @@
+# Content configuration file
+##
+### use content/*.md files to re-order, delete or add new sections by uniqie name [ name ]
+### here you can find all content data for all pre-build sections
+##
+### All Sections:
+### - Hero Section
+### - Tour Search Section
+### - Tour Search Section
+### - Destination Section
+### - Packeges Section
+### - Gallery Section
+### - CTA Section
+
+#################
+#   Homepage   #
+#################
+
+### Hero section [ hero-section.html ]
+hero_section:
+  enable: true
+  title: JOURNEY TO <br>EXPLORE WORLD
+  description: >
+    Ac mi duis mollis. Sapiente? Scelerisque quae, penatibus? Suscipit class corporis nostra rem quos voluptatibus habitant? Fames, vivamus minim nemo enim, gravida lobortis quasi, eum.
+  button_primary: Learn more
+  button_secondary: Book now
+
+### Tour Search Section [ tour-search-section.html ]
+tour_search_section:
+  enable: true
+  button: Inquire now
+
+### Destination Section [ destination-section.html ]
+destination_section:
+  enable: true
+  label_title: DISCOVER PLACE
+  title: POPULAR DESTINATIONS
+  description: Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium. Sit ornare mollitia tenetur, aptent.
+  button: More destinations
+
+### Packages Section [ packeges-section.html ]
+packages_section:
+  enable: true
+  label_title: POPULAR PACKAGES
+  title: CHECKOUT OUR PACKAGES
+  description: Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium. Sit ornare mollitia tenetur, aptent.
+  button: View All Packages
+
+### Gallery Section [ gallery-section.html ]
+gallery_section:
+  enable: true
+  label_title: PHOTO GALLERY
+  title: PHOTO'S FROM TRAVELLERS
+  description: Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium. Sit ornare mollitia tenetur, aptent.
+  images:
+  - images/gallery-1.jpg
+  - images/gallery-2.jpg
+  - images/gallery-3.jpg
+  - images/gallery-4.jpg
+  - images/gallery-5.jpg
+
+### CTA Section [ cta-section.html ]
+cta_section:
+  enable: true
+  label_title: CALL TO ACTION
+  title: READY FOR UNFORGATABLE <br>TRAVEL. REMEMBER US!
+  description: Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium. Sit ornare mollitia tenetur, aptent.
+  button: Contact Us !

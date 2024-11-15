@@ -10,7 +10,8 @@ disableHugoGeneratorInject: true
 enableEmoji: true
 enableGitInfo: false
 enableRobotsTXT: true
-paginate: 6
+pagination: 
+  pagerSize: 6
 rssLimit: 10
 preserveTaxonomyNames: true
 metaDataFormat: yaml
@@ -91,5 +92,3 @@ module:
       target: assets
     - source: static
       target: static
-
-      

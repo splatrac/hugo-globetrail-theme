@@ -1,0 +1,6 @@
+packages:
+  - name: test1
+    time: 7D
+    pax: 10
+    price: 200
+

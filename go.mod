@@ -1,3 +1,3 @@
 module github.com/splatrac/hugo-globetrail-theme
 
-go 1.23.2
+go 1.23.3
