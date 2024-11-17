@@ -1,14 +1,13 @@
-# Generated files by hugo
-/public/
-/exampleSite/public/
-/resources/_gen/
-/assets/jsconfig.json
-hugo_stats.json
+/public
+/resources
+/exampleSite/public
+/exampleSite/resources
+/node_modules
+.vscode
+.hugo_build.lock
+*.swp
 
-# Executable may be added to repository
-hugo.exe
-hugo.darwin
-hugo.linux
-
-# Temporary lock file while building
-/.hugo_build.lock
+# ctags
+tags
+*.tags
+TAGS
