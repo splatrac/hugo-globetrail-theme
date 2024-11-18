@@ -4,11 +4,13 @@
   <article>
     {{- $page := . }}
     {{- range $section := $.Params.sections }}
-        {{- $partialPath := printf "partials/sections/%s.html" $section }}
-        {{- if templates.Exists ( $partialPath ) }}
-            {{- partial $partialPath $page }}
-        {{- end }}
+
+    {{- $partialPath := $section | printf "partials/sections/%s.html" }}
+    {{- if templates.Exists ( $partialPath ) }}
+    {{- partial $partialPath $page }}
     {{- end }}
-  </article>
+
+    {{- end }} 
+</article>
 </div>
 {{- end }}
