@@ -3,19 +3,20 @@
         <div class="container">
             <div class="footer-brand">
                 <a href="{{ "/" | relLangURL }}" class="logo">
-                    <img src="/images/logo.png" alt="Globetrail logo">
+                    {{ with resources.Get (printf "images/%s" .Site.Params.logo.light) }}
+                    <img id="logo-footer" src="{{ .RelPermalink }}" width="{{ .Width }}" alt="Globetrail logo">
+                    {{ end }}
                 </a>
                 {{- with .Site.Params.description }}
                 <p class="footer-text">{{ . | safeHTML }}</p>
                 {{- end }}
             </div>
             <div class="footer-contact">
-                <h4 class="contact-title">Contact Us</h4>
-                <p class="contact-text">
-                    Feel free to contact and reach us !!
-                </p>
-                <ul>
-                    {{- with .Site.Params.contact.phone }}
+                <h4 class="contact-title">{{ i18n "contact_text" }}</h4>
+                <div class="contact-lists">
+                {{- range .Site.Params.contact }} 
+                <ul class="contact-list">
+                    {{- with .phone }}
                     {{- $phone := . }}
                     {{- $phone := replace $phone " " "" }}
                     {{- $phone := replace $phone "(" "" }}
@@ -28,19 +29,21 @@
                         <a href="tel:{{ $phone }}" class="contact-link">{{ . }}</a>
                     </li>
                     {{- end }}
-                    {{- with .Site.Params.contact.email }}
+                    {{- with .email }}
                     <li class="contact-item">
                         <ion-icon name="mail-outline"></ion-icon>
                         <a href="mailto:{{ . }}" class="contact-link">{{ . }}</a>
                     </li>
                     {{- end }}
-                    {{- with .Site.Params.contact.location }}
+                    {{- with .location }}
                     <li class="contact-item">
                         <ion-icon name="location-outline"></ion-icon>
                         <address>{{ . }}</address>
                     </li>
                     {{- end }}
                 </ul>
+                {{- end }}
+                </div>
             </div>
             <div class="footer-form">
                 <p class="form-text">

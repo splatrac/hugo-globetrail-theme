@@ -8,9 +8,12 @@ header:
   helpline_title: "For Further Inquires:"
   helpline_number: "+01 (123) 4567 90"
 contact:
-  phone: +01 (123) 4567 90
-  email: info@globetrail.org
-  location: 3146 Koontz, California
+  - phone: +01 (123) 4567 90
+    email: info@globetrail.org
+    location: 3146 Koontz, California
+  - phone: +01 (123) 4567 90
+    email: info@globetrail.org
+    location: 1289 Athens, Greece
 copyright: 2024 <a href="">Splatrac</a>. All rights reserved
 logo:
   light: "logo.png"
