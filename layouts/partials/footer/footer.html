@@ -17,17 +17,22 @@
                 {{- range .Site.Params.contact }} 
                 <ul class="contact-list">
                     {{- with .phone }}
-                    {{- $phone := . }}
-                    {{- $phone := replace $phone " " "" }}
-                    {{- $phone := replace $phone "(" "" }}
-                    {{- $phone := replace $phone ")" "" }}
-                    {{- $phone := replace $phone "-" "" }}
-                    {{- $phone := replace $phone "." "" }}
-                    {{- $phone := replace $phone "," "" }}
-                    <li class="contact-item">
-                        <ion-icon name="call-outline"></ion-icon>
-                        <a href="tel:{{ $phone }}" class="contact-link">{{ . }}</a>
-                    </li>
+                    {{- range $i, $phone := . }}
+                        {{- $phone := replace $phone " " "" }}
+                        {{- $phone := replace $phone "(" "" }}
+                        {{- $phone := replace $phone ")" "" }}
+                        {{- $phone := replace $phone "-" "" }}
+                        {{- $phone := replace $phone "." "" }}
+                        {{- $phone := replace $phone "," "" }}
+                        <li class="contact-item">
+                            {{- if eq $i 0 }}
+                            <ion-icon name="call-outline"></ion-icon>
+                            {{ else }}
+                            <ion-icon></ion-icon>
+                            {{ end }}
+                            <a href="tel:{{ $phone }}" class="contact-link">{{ . }}</a>
+                        </li>
+                    {{ end }}
                     {{- end }}
                     {{- with .email }}
                     <li class="contact-item">
@@ -38,7 +43,7 @@
                     {{- with .location }}
                     <li class="contact-item">
                         <ion-icon name="location-outline"></ion-icon>
-                        <address>{{ . }}</address>
+                        <address>{{ . | safeHTML }}</address>
                     </li>
                     {{- end }}
                 </ul>
