@@ -12,3 +12,10 @@ rating: 5
 featured: true
 weight: 30
 ---
+{{< customtable "styled-table" >}}
+| Header 1 | Header 2 |
+|----------|----------|
+| Cell 1   | Cell 2   |
+| Cell 3   | Cell 4   |
+{{< /customtable >}}
+

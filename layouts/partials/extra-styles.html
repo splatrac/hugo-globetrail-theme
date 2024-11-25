@@ -1,0 +1,4 @@
+{{ $extraCSS := resources.Get "css/extra.css" }}
+{{ if $extraCSS }}
+<link rel="stylesheet" href="{{ $extraCSS.Permalink }}">
+{{ end }}

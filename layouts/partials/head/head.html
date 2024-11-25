@@ -11,9 +11,10 @@
     {{ "<!-- site js -->" | safeHTML }}
     {{ partialCached "head/site-js.html" . }}
     {{ "<!-- site style -->" | safeHTML }}
+
+    {{ partial "extra-styles.html" . }}
     {{ partial "head/site-style" . }}
     {{ partial "head/head-seo.html" . }}
-
     <link rel="canonical" href="{{ .RelPermalink }}">
 
     {{ template "_internal/schema.html" . }}

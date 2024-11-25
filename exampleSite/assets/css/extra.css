@@ -1,0 +1,9 @@
+:root {
+    --primary-bg: #3b79c9; /* Main background color for table headers */
+    --secondary-bg: #324960; /* Alternating background color for table headers */
+    --even-row-bg: #F8F8F8; /* Background color for even rows */
+    --odd-row-bg: #ffffff; /* Background color for odd rows */
+    --text-color: #ffffff; /* Text color for header */
+    --box-shadow-color: rgba(0, 0, 0, 0.2); /* Box shadow color */
+}
+
