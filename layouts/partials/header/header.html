@@ -58,7 +58,12 @@
             <nav class="navbar" data-navbar>
                 <div class="navbar-top">
                     <a href="{{ "/" | relLangURL }}" class="logo">
-                        <img src="/images/logo-blue.svg" alt="Tourly logo">
+                    {{ with resources.Get (printf "images/%s" .Site.Params.logo.light) }}
+                        {{ with .Resize "50x" }}
+                        <img src="{{ .RelPermalink }}" width="64px" height="64px" alt="Globetrail logo">
+                        {{ end }}
+                    {{ end }}
+
                     </a>
                     <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
                         <ion-icon name="close-outline"></ion-icon>
