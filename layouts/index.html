@@ -2,15 +2,9 @@
 <div class="main">
 
   <article>
-    {{- $page := . }}
-    {{- range $section := $.Params.sections }}
-
-    {{- $partialPath := $section | printf "sections/%s.html" }}
-    {{- if templates.Exists ( $partialPath ) }}
-    {{- partial $partialPath $page }}
-    {{- end }}
-
-    {{- end }} 
+    {{ range .Params.sections }}
+      {{ partial (print "sections/" . ".html") $ }}
+    {{ end }}
 </article>
 </div>
 {{- end }}

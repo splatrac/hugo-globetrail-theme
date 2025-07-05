@@ -165,7 +165,7 @@
       "wrapper"
     ],
     "ids": [
-      "alternate-syntaxalternate-syntax",
+      "alternate-syntax",
       "checkin",
       "checkout",
       "contact",
@@ -179,14 +179,14 @@
       "heading-level-4",
       "heading-level-5",
       "heading-level-6",
-      "headingsheadings",
+      "headings",
       "home",
-      "line-breaksline-breaks",
-      "listslists",
+      "line-breaks",
+      "lists",
       "logo-footer",
-      "overviewoverview",
+      "overview",
       "packages",
-      "paragraphsparagraphs-1",
+      "paragraphs",
       "people",
       "site-main",
       "top"

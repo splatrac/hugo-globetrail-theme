@@ -91,3 +91,5 @@ module:
       target: assets
     - source: static
       target: static
+ignoreLogs:
+  - warning-partial-superfluous-prefix
