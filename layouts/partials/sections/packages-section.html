@@ -1,6 +1,7 @@
 {{- with (index .Site.Data .Site.Language.Lang).home.packages_section }}
 {{- if .enable }}
 <section class="package" id="packages">
+<!-- This is the list of packages as a section (featured) -->
     <div class="container">
         {{- with .label_title }}
         <p class="section-subtitle">{{ . }}</p>

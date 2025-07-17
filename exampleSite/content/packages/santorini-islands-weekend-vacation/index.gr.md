@@ -9,6 +9,6 @@ country: Malaysia
 price: 660
 reviews: 25
 rating: 5
-featured: true
+featured: false
 weight: 30
 ---

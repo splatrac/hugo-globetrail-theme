@@ -1,4 +1,5 @@
 {{ define "main" }}
+<!-- This is the list of packages as a page -->
 <div class="page-list">
 	<div class="container">
 		<div class="page-article">
@@ -8,9 +9,7 @@
 			</header>
 			<div class="page-lists">
 				<ul class="package-list">
-					{{- $query := where site.RegularPages "Type" "packages" }}
-					{{- $featured := where $query "Params.featured" "==" true }}
-					{{- range $index, $posts := $featured }}
+                    {{- range $index, $posts := where site.RegularPages "Type" "packages" }}
 					<li>
 						<div class="package-card">
 							<figure class="card-banner">
