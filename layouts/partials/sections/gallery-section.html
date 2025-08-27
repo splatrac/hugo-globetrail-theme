@@ -12,7 +12,8 @@
         <p class="section-text">{{ . | safeHTML }}</p>
         {{- end }}
         <ul class="gallery-list">
-            {{- range .images }}
+        {{- $galleryNumber := $.Site.Params.homeGalleryNumber | default 9999 }}
+            {{- range first $galleryNumber .images }}
             <li class="gallery-item">
                 <figure class="gallery-image">
                     {{- with resources.GetMatch . }}
@@ -24,6 +25,10 @@
             </li>
             {{- end }}
         </ul>
+    </div>
+
+    <div class="button-wrapper">
+        <a class="button-link btn btn-primary" href="/gallery">View All Photos</a>
     </div>
 </section>
 {{- end }}
