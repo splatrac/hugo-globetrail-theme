@@ -1,0 +1,99 @@
+title = "Globetrail"
+baseURL = "/"
+languageCode = "en"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+canonifyURLs = false
+disableAliases = true
+disableHugoGeneratorInject = true
+enableEmoji = true
+enableGitInfo = false
+enableRobotsTXT = true
+rssLimit = 10
+preserveTaxonomyNames = false
+metaDataFormat = "toml"
+summaryLength = 8
+# googleAnalytics = "G-BPYZWSQKWP"
+disableKinds = [ "RSS" ]
+ignoreLogs = [ "warning-partial-superfluous-prefix" ]
+
+[pagination]
+pagerSize = 6
+
+[permalinks]
+pages = "/:slug/"
+page = "/:slug/"
+blog = "/:slug/"
+
+[taxonomies]
+tag = "tags"
+category = "categories"
+author = "authors"
+
+[imaging]
+quality = 100
+
+[build]
+writeStats = true
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup.highlight]
+noClasses = false
+style = "solarized-dark256"
+tabWidth = 4
+
+[outputs]
+home = [ "HTML", "RSS", "REDIRECTS", "HEADERS" ]
+section = [ "HTML" ]
+
+[mediaTypes."text/netlify"]
+suffixes = [ "" ]
+delimiter = ""
+
+[outputFormats.REDIRECTS]
+mediaType = "text/netlify"
+baseName = "_redirects"
+isPlainText = true
+notAlternative = true
+
+[outputFormats.HEADERS]
+mediaType = "text/netlify"
+baseName = "_headers"
+isPlainText = true
+notAlternative = true
+
+[outputFormats.SITEMAP]
+mediaType = "application/xml"
+baseName = "sitemap"
+isHTML = false
+isPlainText = true
+noUgly = true
+rel = "sitemap"
+
+[caches.getjson]
+dir = ":cacheDir/:project"
+maxAge = "10s"
+
+[sitemap]
+changefreq = "weekly"
+filename = "sitemap.xml"
+priority = 0.5
+
+[minify.tdewolff.html]
+keepWhitespace = false
+
+[module.hugoVersion]
+extended = true
+min = "0.120.0"
+max = ""
+
+[[module.mounts]]
+source = "assets"
+target = "assets"
+
+[[module.mounts]]
+source = "static"
+target = "static"
+

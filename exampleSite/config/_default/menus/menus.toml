@@ -1,0 +1,60 @@
+[[main]]
+name = "home"
+url = "#home"
+weight = 10
+
+[[main]]
+name = "about_us"
+url = "/"
+weight = 20
+
+[[main]]
+name = "destination"
+url = "#destination"
+weight = 30
+
+[[main]]
+name = "packages"
+url = "#packages"
+weight = 40
+
+[[main]]
+name = "gallery"
+url = "#gallery"
+weight = 50
+
+[[main]]
+name = "contact_us"
+url = "#contact"
+weight = 60
+
+[[social_list]]
+name = "facebook"
+url = "#"
+weight = 10
+
+[[social_list]]
+name = "twitter"
+url = "#"
+weight = 20
+
+[[social_list]]
+name = "youtube"
+url = "#"
+weight = 30
+
+[[footer]]
+name = "privacy_policy"
+url = "/privacy-policy"
+weight = 10
+
+[[footer]]
+name = "terms_n_cond"
+url = "/term-and-condition"
+weight = 20
+
+[[footer]]
+name = "FAQ"
+url = "/faq"
+weight = 30
+

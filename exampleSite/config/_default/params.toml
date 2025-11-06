@@ -1,0 +1,31 @@
+title = "Globetrail Theme"
+description = "Urna ratione ante harum provident, eleifend, vulputate molestiae proin fringilla, praesentium magna conubia at perferendis, pretium, aenean aut ultrices."
+favicon = "images/favicon.png"
+author = "Splatrac"
+copyright = '2024 <a href="">Splatrac</a>. All rights reserved'
+homeGalleryNumber = 5
+
+[header]
+title = "Globetrail"
+helpline_title = "For Further Inquires:"
+helpline_number = "+01 (123) 4567 90"
+
+[[contact]]
+phone = [ "+01 (123) 4567 90", "+01 (123) 4567 91" ]
+email = "info@globetrail.org"
+location = "3146 Koontz, California"
+
+[[contact]]
+phone = [ "+01 (123) 4567 90" ]
+email = "info@globetrail.org"
+location = "1289 Athens, Greece"
+
+[logo]
+light = "logo.png"
+dark = "logo.png"
+
+[umami]
+url = "https://umamiurl.tld"
+uuid = "umami-uuid"
+
+
